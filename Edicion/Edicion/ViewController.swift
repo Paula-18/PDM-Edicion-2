@@ -36,10 +36,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let contactoSeleccionado = contactos[tvContactos.indexPathForSelectedRow!.row]
-        let destino = segue.destination as! EditarContactoController
-        destino.contacto = contactoSeleccionado
-        destino.callbackActualizarTVContactos = actualizarTVContactos
+        
+        if segue.identifier == "goToEditar" {
+            
+            let contactoSeleccionado = contactos[tvContactos.indexPathForSelectedRow!.row]
+            let destino = segue.destination as! EditarContactoController
+            destino.contacto = contactoSeleccionado
+            destino.indice = tvContactos.indexPathForSelectedRow!.row
+            destino.callbackActualizarTVContactos = actualizarTVContactos
+            destino.callbackEliminarContacto = eliminarContacto
+            
+        }
+        
+        if segue.identifier == "goToAgregar" {
+            
+            let destino = segue.destination as! AgregarContactoController
+            destino.callbackAgregarContacto = agregarContacto
+            
+        }
+        
+        
     }
     
   
@@ -48,7 +64,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.title = "Contactos"
+        
         contactos.append(Contacto(nombre: "José", celular: "6442059823", correo: "jose14@gmail.com"))
         contactos.append(Contacto(nombre: "Maria", celular: "64420457812", correo: "mary@gmail.com"))
         contactos.append(Contacto(nombre: "Ana", celular: "6442059823", correo: "ana03@gmail.com"))
@@ -57,6 +75,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func actualizarTVContactos() {
         tvContactos.reloadData()
+    }
+    
+    func eliminarContacto(indice: Int) {
+        contactos.remove(at: indice)
+        actualizarTVContactos()
+    }
+    
+    func agregarContacto(contacto: Contacto) {
+        contactos.append(contacto)
+        actualizarTVContactos()
     }
     
 }

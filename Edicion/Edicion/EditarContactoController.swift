@@ -12,12 +12,14 @@ import UIKit
 class EditarContactoController: UIViewController {
     
     var contacto : Contacto?
+    var indice :Int?
     
     @IBOutlet weak var txtNombre: UITextField!
     @IBOutlet weak var txtCorreo: UITextField!
     @IBOutlet weak var txtCelular: UITextField!
     
     var callbackActualizarTVContactos : (() -> Void)?
+    var callbackEliminarContacto : ((Int) -> Void)?
     
     
     override func viewDidLoad() {
@@ -34,6 +36,10 @@ class EditarContactoController: UIViewController {
         contacto!.celular = txtCelular.text!
         
         callbackActualizarTVContactos!()
+    }
+    @IBAction func doTapEliminar(_ sender: Any) {
+        callbackEliminarContacto!(indice!)
+        self.navigationController!.popViewController(animated: true)
     }
     
 }

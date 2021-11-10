@@ -15,6 +15,7 @@
 		3D1E760E272B67E100B932ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1E760C272B67E100B932ED /* LaunchScreen.storyboard */; };
 		3D1E7616272B688200B932ED /* Contacto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1E7615272B688200B932ED /* Contacto.swift */; };
 		3D1E761A272B6EF400B932ED /* CeldaContactoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1E7619272B6EF400B932ED /* CeldaContactoController.swift */; };
+		3DBE224E273B43A500859D86 /* AgregarContactoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBE224D273B43A500859D86 /* AgregarContactoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3D1E760F272B67E100B932ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D1E7615272B688200B932ED /* Contacto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacto.swift; sourceTree = "<group>"; };
 		3D1E7619272B6EF400B932ED /* CeldaContactoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaContactoController.swift; sourceTree = "<group>"; };
+		3DBE224D273B43A500859D86 /* AgregarContactoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarContactoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 				3D1E7605272B67DC00B932ED /* ViewController.swift */,
 				3D1E7619272B6EF400B932ED /* CeldaContactoController.swift */,
 				3D0378C32732057500AA32B6 /* EditarContactoController.swift */,
+				3DBE224D273B43A500859D86 /* AgregarContactoController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DBE224E273B43A500859D86 /* AgregarContactoController.swift in Sources */,
 				3D1E761A272B6EF400B932ED /* CeldaContactoController.swift in Sources */,
 				3D1E7606272B67DC00B932ED /* ViewController.swift in Sources */,
 				3D1E7604272B67DC00B932ED /* AppDelegate.swift in Sources */,
